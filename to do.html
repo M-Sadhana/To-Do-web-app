@@ -1,0 +1,52 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>To-Do List</title>
+    <style>
+        .todo-app {
+            width: 300px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .todo-app input[type="text"] {
+            width: 100%;
+            margin-bottom: 10px;
+        }
+        .todo-app ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .todo-app li {
+            margin-bottom: 5px;
+        }
+        .todo-app button {
+            padding: 5px 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="todo-app">
+        <h1>To-Do List</h1>
+        <input type="text" id="taskInput" placeholder="Enter a task">
+        <button onclick="addTask()">Add Task</button>
+        <ul id="taskList"></ul>
+    </div>
+
+    <script>
+        function addTask() {
+            var taskInput = document.getElementById('taskInput');
+            var taskList = document.getElementById('taskList');
+
+            if (taskInput.value !== '') {
+                var taskItem = document.createElement('li');
+                taskItem.innerText = taskInput.value;
+                taskList.appendChild(taskItem);
+                taskInput.value = '';
+            }
+        }
+    </script>
+</body>
+</html>
